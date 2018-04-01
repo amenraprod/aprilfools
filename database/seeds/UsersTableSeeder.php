@@ -19,7 +19,7 @@ class UsersTableSeeder extends Seeder
 
         App\Profile::create([
           'user_id' => $user->id,
-          'avatar' => 'link to image',
+          'avatar' => 'uploads/avatars/curtissons.jpg',
           'gender' => 'male',
           'phone' => '3134012187',
           'dob' => '04/13/1995',
