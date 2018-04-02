@@ -28,7 +28,12 @@ Route::get('/users', [
   'as' => 'users'
 ]);
 
-Route::post('/user/store', [
+Route::get('/users/create',[
+  'uses' => 'UsersController@create',
+  'as' => 'user.create'
+]);
+
+Route::post('/users/store', [
   'uses' => 'UsersController@store',
   'as' => 'user.store'
 ]);
