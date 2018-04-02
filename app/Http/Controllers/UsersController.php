@@ -46,9 +46,9 @@ class UsersController extends Controller
         ]);
 
         $user = User::create([
-          'name' => $request->name;
-          'email' => $request->email;
-          'password' => bcrypt('password');
+          'name' => $request->name,
+          'email' => $request->email,
+          'password' => bcrypt('password')
         ]);
 
         $profile = Profile::create([
@@ -56,6 +56,8 @@ class UsersController extends Controller
          ]);
 
          Session::flash('success', 'User added succesfully');
+
+         return redirect()->route('users');
     }
 
     /**
