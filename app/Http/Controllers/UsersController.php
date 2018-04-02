@@ -52,10 +52,11 @@ class UsersController extends Controller
         ]);
 
         $profile = Profile::create([
-        'user_id' => $user->id
+        'user_id' => $user->id,
+        'avatar' => 'uploads/avatars/curtissons.jpg'
          ]);
 
-         
+
 
          return redirect()->route('users');
     }
