@@ -10,7 +10,7 @@
             </div>
 
             <div class="panel-body">
-                  <form action="{{ route('user.store') }}" method="post">
+                  <form action="{{ route('users.profile.update') }}" method="post">
                         {{ csrf_field() }}
                         <div class="form-group">
                               <label for="name">User</label>
