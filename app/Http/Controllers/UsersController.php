@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\User;
 
+use App\Profile;
+
 class UsersController extends Controller
 {
     /**
@@ -40,6 +42,16 @@ class UsersController extends Controller
         $this->validate($request,[
           'name' => 'required',
           'email' => 'required|email',
+
+        ]);
+
+        $user = User::create([
+          'name' => $request->name;
+          'email' => $request->email;
+          'password' => bcrypt('password');
+        ]);
+
+        $profile = Profile::create([
 
         ]);
     }
