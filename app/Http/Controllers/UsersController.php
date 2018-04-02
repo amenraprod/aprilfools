@@ -114,4 +114,11 @@ class UsersController extends Controller
       return redirect->back();
 
     }
+    public function not_admin($id){
+      $user = User::find($id);
+
+      $user->admin = 0;
+      $user->save();
+
+      return redirect->back();
 }
