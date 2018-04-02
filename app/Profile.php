@@ -10,5 +10,5 @@ public function user(){
   return $this->belongsTo('App\User');
 }
 
-protected $fillable ['user_id', 'avatar', 'gender', 'dob', 'phone', 'age' ];
+protected $fillable = ['user_id', 'avatar', 'gender', 'dob', 'phone', 'age' ];
 }
