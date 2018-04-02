@@ -42,6 +42,10 @@ Route::group(['middleware' => ['web']], function () {
   Route::get('/users/admin/{id}', [
     'uses' => 'UsersController@admin',
     'as' => 'user.admin'
-  ])
+  ]);
 
+  Route::get('/users/not-admin/{id}', [
+    'uses' => 'UsersController@not_admin',
+    'as' => 'user.not.admin'
+  ]);
 });
