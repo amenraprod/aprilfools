@@ -109,7 +109,7 @@ class UsersController extends Controller
       $user->delete();
       return redirect()->back();
   }
-    }
+
     public function admin($id){
       $user = User::find($id);
 
@@ -126,4 +126,5 @@ class UsersController extends Controller
       $user->save();
 
       return redirect()->back();
+}
 }
