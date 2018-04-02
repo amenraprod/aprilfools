@@ -73,7 +73,7 @@
             <div class="col-lg=4">
             <ul class="list-group">
               <li class="list-group-item">
-                Create a new user
+                <a href="/users/create">Create a new user</a>
               </li>
             </ul>
             </div>
