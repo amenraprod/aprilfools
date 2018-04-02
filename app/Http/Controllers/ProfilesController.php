@@ -1,11 +1,8 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Auth;
-
+use Session;
 use Illuminate\Http\Request;
-
 class ProfilesController extends Controller
 {
     /**
@@ -15,9 +12,8 @@ class ProfilesController extends Controller
      */
     public function index()
     {
-        return view ('profile')->with('user', Auth::user)));
+        return view('admin.users.profile')->with('user', Auth::user());
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -27,7 +23,6 @@ class ProfilesController extends Controller
     {
         //
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -38,7 +33,6 @@ class ProfilesController extends Controller
     {
         //
     }
-
     /**
      * Display the specified resource.
      *
@@ -49,7 +43,6 @@ class ProfilesController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -60,7 +53,6 @@ class ProfilesController extends Controller
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -68,11 +60,36 @@ class ProfilesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
-    }
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email',
+            'avatar' => 'required|image',
+            'password' => 'required|password'
+        ]);
+        $user = Auth::user();
+        if($request->hasFile('avatar'))
+        {
+            $avatar = $request->avatar;
+            $avatar_new_name = time() . $avatar->getClientOriginalName();
+            $avatar->move('uploads/avatars', $avatar_new_name);
+            $user->profile->avatar = 'uploads/avatars/' . $avatar_new_name ;
+            $user->profile->save();
+        }
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->save();
+        $user->profile->save();
+        if($request->has('password'))
+        {
+            $user->password = bcrypt($request->password);
 
+            $user->save();
+        }
+        
+        return redirect()->back();
+    }
     /**
      * Remove the specified resource from storage.
      *
