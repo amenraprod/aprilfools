@@ -27,3 +27,8 @@ Route::get('/users', [
   'uses' => 'UsersController@index',
   'as' => 'users'
 ]);
+
+Route::post('/user/store', [
+  'uses' => 'UsersController@store',
+  'as' => 'users.store'
+]);
