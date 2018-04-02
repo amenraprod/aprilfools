@@ -52,8 +52,10 @@ class UsersController extends Controller
         ]);
 
         $profile = Profile::create([
+        'user_id' => $user->id
+         ]);
 
-        ]);
+         Session::flash('success', 'User added succesfully');
     }
 
     /**
