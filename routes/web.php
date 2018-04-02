@@ -48,4 +48,9 @@ Route::group(['middleware' => ['web']], function () {
     'uses' => 'UsersController@not_admin',
     'as' => 'user.not.admin'
   ]);
+
+  Route::get('/users/profile', [
+    'uses' => 'ProfilesController@index',
+     'as' => 'user.profile'
+   ]);
 });
