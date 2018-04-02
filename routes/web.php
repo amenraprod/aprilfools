@@ -11,29 +11,32 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['middleware' => ['web']], function () {
+  Route::get('/', function () {
+      return view('welcome');
+  });
+
+  Route::get('/test', function() {
+    return App\User::find(1)->profile;
+  });
+
+  Auth::routes();
+
+  Route::get('/home', 'HomeController@index')->name('home');
+
+  Route::get('/users', [
+    'uses' => 'UsersController@index',
+    'as' => 'users'
+  ]);
+
+  Route::get('/users/create',[
+    'uses' => 'UsersController@create',
+    'as' => 'user.create'
+  ]);
+
+  Route::post('/users/store', [
+    'uses' => 'UsersController@store',
+    'as' => 'user.store'
+  ]);
+
 });
-
-Route::get('/test', function() {
-  return App\User::find(1)->profile;
-});
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/users', [
-  'uses' => 'UsersController@index',
-  'as' => 'users'
-]);
-
-Route::get('/users/create',[
-  'uses' => 'UsersController@create',
-  'as' => 'user.create'
-]);
-
-Route::post('/users/store', [
-  'uses' => 'UsersController@store',
-  'as' => 'user.store'
-]);
