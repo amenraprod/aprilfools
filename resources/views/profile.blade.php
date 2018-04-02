@@ -19,7 +19,7 @@
 
                         <div class="form-group">
                               <label for="name">New Password</label>
-                              <input type="email" name="password" class="form-control">
+                              <input type="password" name="password" class="form-control">
                         </div>
 
                         <div class="form-group">
