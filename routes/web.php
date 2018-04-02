@@ -30,5 +30,5 @@ Route::get('/users', [
 
 Route::post('/user/store', [
   'uses' => 'UsersController@store',
-  'as' => 'users.store'
+  'as' => 'user.store'
 ]);
