@@ -12,7 +12,7 @@ class ProfilesController extends Controller
      */
     public function index()
     {
-        return view('admin.users.profile')->with('user', Auth::user());
+        return view('profile')->with('user', Auth::user());
     }
     /**
      * Show the form for creating a new resource.
@@ -87,7 +87,7 @@ class ProfilesController extends Controller
 
             $user->save();
         }
-        
+
         return redirect()->back();
     }
     /**

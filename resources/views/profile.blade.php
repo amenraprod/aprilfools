@@ -42,7 +42,7 @@
                         <div class="form-group">
                               <div class="text-center">
                                     <button class="btn btn-success" type="submit">
-                                          Add user
+                                          Update User
                                     </button>
                               </div>
                         </div>

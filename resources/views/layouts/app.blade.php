@@ -75,6 +75,14 @@
               <li class="list-group-item">
                 <a href="/users/create">Create a new user</a>
               </li>
+              <li class="list-group-item">
+                <a href="/users">View all users</a>
+              </li>
+              <li class="list-group-item">
+              <a href="/users/profile">Edit User Profile</a>
+            </li>
+            <li class="list-group-item">
+              <a href="/users/search">Search Users</a>
             </ul>
             </div>
             <div class="col-lg-8">
