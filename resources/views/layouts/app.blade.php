@@ -68,7 +68,20 @@
         </nav>
 
         <main class="py-4">
+            <div class="container">
+              <div class="row">
+            <div class="col-lg=4">
+            <ul class="list-group">
+              <li class="list-group-item">
+                Create a new user
+              </li>
+            </ul>
+            </div>
+            <div class="col-lg-8">
             @yield('content')
+
+      </div>
+              </div>
         </main>
     </div>
 </body>
