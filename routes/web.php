@@ -17,7 +17,8 @@ Route::get('/', function () {
 
 Route::get('/test', function() {
   return App\User::find(1)->profile;
-})
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
