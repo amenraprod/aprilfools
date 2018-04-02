@@ -55,7 +55,7 @@ class UsersController extends Controller
         'user_id' => $user->id
          ]);
 
-         Session::flash('success', 'User added succesfully');
+         
 
          return redirect()->route('users');
     }
