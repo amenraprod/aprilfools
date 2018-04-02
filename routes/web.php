@@ -39,7 +39,7 @@ Route::group(['middleware' => ['web']], function () {
     'as' => 'user.store'
   ]);
 
-  Route::get('/users/admin', [
+  Route::get('/users/admin/{id}', [
     'uses' => 'UsersController@admin',
     'as' => 'user.admin'
   ])
