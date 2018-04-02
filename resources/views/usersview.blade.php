@@ -35,16 +35,12 @@
                                                 </td>
                                                 <td>
                                                       @if($user->admin)
-                                                             <class="btn btn-xs btn-danger">Remove permissions</a>
+                                                            <a href="{{ route('user.not.admin', ['id' => $user->id]) }}" class="btn btn-xs btn-danger">Remove permissions</a>
                                                       @else
-                                                             <class="btn btn-xs btn-success">Make admin
+                                                            <a href="{{ route('user.admin', ['id' => $user->id]) }}" class="btn btn-xs btn-success">Make admin</a>
                                                       @endif
                                                 </td>
-                                                <td>
-                                                      @if(Auth::id() !== $user->id)
-                                                             <class="btn btn-xs btn-danger">Delete
-                                                      @endif
-                                                </td>
+                                                
                                           </tr>
                                     @endforeach
                               @else
