@@ -103,7 +103,12 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+      $user = User::find($id);
+      $user->profile->delete();
+      $user->delete();
+      return redirect()->back();
+  }
     }
     public function admin($id){
       $user = User::find($id);
@@ -111,7 +116,7 @@ class UsersController extends Controller
       $user->admin = 1;
       $user->save();
 
-      return redirect->back();
+      return redirect()->back();
 
     }
     public function not_admin($id){
@@ -120,5 +125,5 @@ class UsersController extends Controller
       $user->admin = 0;
       $user->save();
 
-      return redirect->back();
+      return redirect()->back();
 }
