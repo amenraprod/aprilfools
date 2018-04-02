@@ -51,6 +51,10 @@ Route::group(['middleware' => ['web']], function () {
 
   Route::get('/users/profile', [
     'uses' => 'ProfilesController@index',
-     'as' => 'user.profile'
+     'as' => 'users.profile'
    ]);
+  Route::get('/users/profile/update', [
+    'uses' => 'ProfilesController@update',
+    'as' => 'users.profile.update'
+  ]);
 });
